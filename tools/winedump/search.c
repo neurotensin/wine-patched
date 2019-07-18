@@ -67,7 +67,7 @@ BOOL symbol_search (parsed_symbol *sym)
   {
     FILE *f_grep;
     char *cmd = str_create (4, "grep -d recurse -l \"", sym->symbol,
-        !attempt ? "[:blank:]*(\" " : "\" ", globals.directory);
+        !attempt ? "[[:blank:]]*(\" " : "\" ", globals.directory);
 
     if (VERBOSE)
       puts (cmd);
