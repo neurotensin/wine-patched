@@ -169,7 +169,9 @@ const char *symbol_get_call_convention(const parsed_symbol *sym)
  */
 const char *symbol_get_spec_type (const parsed_symbol *sym, size_t arg)
 {
-  assert (arg < sym->argc);
+  /*assert (arg < sym->argc);*/
+  if(arg < sym->argc) return NULL;
+
   switch (sym->arg_type [arg])
   {
   case ARG_STRING:      return "str";
